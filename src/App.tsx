@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Camera from './components/Camera/Camera';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TonConnectUIProvider manifestUrl="https://telegram-mini-apps-bot.netlify.app/tonconnect-manifest.json">
+      <div className="App">
+        <header className="App-main">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/camera" element={<Camera />} />
+            <Route path="*" element={<h2>Error, Page not found</h2>} />
+          </Routes>
+        </header>
+      </div>
+    </TonConnectUIProvider>
   );
-}
+};
 
 export default App;
