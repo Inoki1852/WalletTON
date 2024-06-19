@@ -7,19 +7,25 @@ const Home: React.FC = () => {
     const { BackButton } = useTelegram();
 
     useEffect(() => {
-        if (BackButton.isVisible === true) {
-            BackButton.hide();
-        }
+        BackButton.hide();
     }, [BackButton]);
 
     const openCamera = () => {
         navigate('/camera');
     };
 
+    const openPayment = () => {
+        navigate('/payment');
+    }
+
     return (
         <div className="component">
             <button className="adjustable-button" onClick={openCamera}>
-                Open Camera
+                Camera
+            </button>
+            <br/>
+            <button className="adjustable-button" onClick={openPayment}>
+                Payment
             </button>
         </div>
     );
