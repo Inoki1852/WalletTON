@@ -14,18 +14,10 @@ const Home: React.FC = () => {
         navigate('/camera');
     };
 
-    const openPayment = () => {
-        navigate('/payment');
-    }
-
     return (
         <div className="component">
             <button className="adjustable-button" onClick={openCamera}>
                 Camera
-            </button>
-            <br/>
-            <button className="adjustable-button" onClick={openPayment}>
-                Payment
             </button>
         </div>
     );
