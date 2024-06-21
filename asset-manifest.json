@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/WalletTON/static/css/main.6b28ef6b.css",
+    "main.js": "/WalletTON/static/js/main.cab7863c.js",
+    "static/js/453.e008294a.chunk.js": "/WalletTON/static/js/453.e008294a.chunk.js",
+    "index.html": "/WalletTON/index.html",
+    "main.6b28ef6b.css.map": "/WalletTON/static/css/main.6b28ef6b.css.map",
+    "main.cab7863c.js.map": "/WalletTON/static/js/main.cab7863c.js.map",
+    "453.e008294a.chunk.js.map": "/WalletTON/static/js/453.e008294a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b28ef6b.css",
+    "static/js/main.cab7863c.js"
+  ]
+}
