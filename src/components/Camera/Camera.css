@@ -1,0 +1,27 @@
+.Camera {
+    --camera-width: 85vw;
+    --camera-height: 85vw;
+}
+
+
+.capture-block {
+    width: var(--camera-width);
+    height: var(--camera-height);
+    object-fit: cover;
+}
+
+
+.canvas {
+    display: none;
+    width: var(--camera-width);
+    height: var(--camera-height);
+    aspect-ratio: 1/1;
+}
+
+
+.select-custom {
+    border-color: var(--tg-theme-button-color);
+    border-radius: 25px;
+    background: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+}
