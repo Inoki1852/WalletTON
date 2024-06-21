@@ -1,3 +1,4 @@
+import './bufferPolyfill';
 import React from 'react';
 import './App.css';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
@@ -6,11 +7,10 @@ import Home from './components/Home/Home';
 import Camera from './components/Camera/Camera';
 import Payment from './components/Payment/Payment';
 
-
 const App: React.FC = () => {
   return (
     <TonConnectUIProvider manifestUrl="https://telegram-mini-apps-bot.netlify.app/tonconnect-manifest.json">
-      <Router>
+      <Router basename='WalletTON'>
         <div className="App">
           <header className="App-main">
             <Routes>

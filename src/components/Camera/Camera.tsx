@@ -10,7 +10,7 @@ const Camera: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
     const [selectedDeviceId, setSelectedDeviceId] = useState<string>('');
-    const { MainButton, BackButton } = useTelegram();
+    const { MainButton, BackButton, user, tg } = useTelegram();
     const navigate = useNavigate();
 
 
@@ -26,10 +26,41 @@ const Camera: React.FC = () => {
         canvas.height = video.videoHeight;
 
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const photoData = canvas.toDataURL('image/png');
-        setPhoto(photoData);
+
+        canvas.toBlob((blob) => {
+            if (blob) {
+                setPhoto(URL.createObjectURL(blob));
+                sendPhotoToBackend(blob);
+            }
+        }, 'image/jpeg');
     }, [videoRef, canvasRef]);
 
+    const sendPhotoToBackend = async (photoBlob: Blob) => {
+        if (!user) {
+            console.error('User data is not available');
+            return;
+        }
+
+        try {
+            const formData = new FormData();
+            formData.append('photo', photoBlob, 'photo.jpg');
+            formData.append('user_id', user.id.toString());
+
+            const response = await fetch('http://localhost:3000/upload-image', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log(result.message);
+        } catch (error) {
+            console.error('Error sending photo to backend:', error);
+        }
+    };
 
     useEffect(() => {
         const getDevices = async () => {
@@ -90,6 +121,8 @@ const Camera: React.FC = () => {
 
 
     useEffect(() => {
+        if (!tg) return;
+
         const backButtonOnClick = () => {
             MainButton.hide();
             navigate('/');
@@ -113,7 +146,7 @@ const Camera: React.FC = () => {
             MainButton.offClick(takePhoto);
             BackButton.offClick(backButtonOnClick);
         };
-    }, [error, MainButton, BackButton, navigate, takePhoto]);
+    }, [error, MainButton, BackButton, navigate, takePhoto, tg]);
 
 
     const requestCameraAccess = async () => {
