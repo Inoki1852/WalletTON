@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/WalletTON/static/css/main.6b28ef6b.css",
-    "main.js": "/WalletTON/static/js/main.cab7863c.js",
-    "static/js/453.e008294a.chunk.js": "/WalletTON/static/js/453.e008294a.chunk.js",
-    "index.html": "/WalletTON/index.html",
-    "main.6b28ef6b.css.map": "/WalletTON/static/css/main.6b28ef6b.css.map",
-    "main.cab7863c.js.map": "/WalletTON/static/js/main.cab7863c.js.map",
-    "453.e008294a.chunk.js.map": "/WalletTON/static/js/453.e008294a.chunk.js.map"
+    "main.css": "/WalletTONfront/static/css/main.6b28ef6b.css",
+    "main.js": "/WalletTONfront/static/js/main.dd9b094e.js",
+    "static/js/453.e008294a.chunk.js": "/WalletTONfront/static/js/453.e008294a.chunk.js",
+    "index.html": "/WalletTONfront/index.html",
+    "main.6b28ef6b.css.map": "/WalletTONfront/static/css/main.6b28ef6b.css.map",
+    "main.dd9b094e.js.map": "/WalletTONfront/static/js/main.dd9b094e.js.map",
+    "453.e008294a.chunk.js.map": "/WalletTONfront/static/js/453.e008294a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6b28ef6b.css",
-    "static/js/main.cab7863c.js"
+    "static/js/main.dd9b094e.js"
   ]
 }
