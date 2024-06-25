@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/WalletTONfront/static/css/main.6b28ef6b.css",
-    "main.js": "/WalletTONfront/static/js/main.954259da.js",
+    "main.js": "/WalletTONfront/static/js/main.747fcf5d.js",
     "static/js/453.e008294a.chunk.js": "/WalletTONfront/static/js/453.e008294a.chunk.js",
     "index.html": "/WalletTONfront/index.html",
     "main.6b28ef6b.css.map": "/WalletTONfront/static/css/main.6b28ef6b.css.map",
-    "main.954259da.js.map": "/WalletTONfront/static/js/main.954259da.js.map",
+    "main.747fcf5d.js.map": "/WalletTONfront/static/js/main.747fcf5d.js.map",
     "453.e008294a.chunk.js.map": "/WalletTONfront/static/js/453.e008294a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6b28ef6b.css",
-    "static/js/main.954259da.js"
+    "static/js/main.747fcf5d.js"
   ]
 }
